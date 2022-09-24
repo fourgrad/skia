@@ -203,10 +203,15 @@ fi
 # Re-enable error checking
 set -e
 
+EXTRA_CFLAGS+="\"-pthread\","
+
 echo "Compiling"
 
 ./bin/gn gen ${BUILD_DIR} \
   --args="is_debug=${IS_DEBUG} \
+  extra_cflags=[
+    ${EXTRA_CFLAGS}
+  ]\
   is_official_build=${IS_OFFICIAL_BUILD} \
   is_component_build=false \
   werror=true \
