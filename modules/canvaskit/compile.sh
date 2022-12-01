@@ -203,7 +203,7 @@ fi
 # Re-enable error checking
 set -e
 
-EXTRA_CFLAGS+="\"-pthread\","
+# EXTRA_CFLAGS+="\"-pthread\","
 
 echo "Compiling"
 
